@@ -1,0 +1,12 @@
+
+the link for docker image : https://hub.docker.com/r/uzol/details
+
+
+Try :
+
+docker pull uzol/details
+
+docker container run -d -p 80:80 --name details uzol/details
+
+
+run: http://localhost:80/

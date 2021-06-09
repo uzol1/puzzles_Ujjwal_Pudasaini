@@ -1,0 +1,13 @@
+import pandas as pd
+import numpy as np
+import csv
+from google.colab import drive
+
+drive.mount('/content/drive', force_remount=True)
+
+count=0
+with open('/content/drive/My Drive/csv-sample.csv', 'r') as csvfile:
+    datareader = csv.reader(csvfile)
+    for row in datareader:
+        count+=1
+print("the total number of rows is " + str(count))

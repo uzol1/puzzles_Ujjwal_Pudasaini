@@ -1,0 +1,33 @@
+
+I wrote the following python code to solve the puzzle.
+{ 
+we do nested if for each number in range(1000)  passing different parameters to the function  which takes the parameter numbers,checking_parameter,number of correct numeral in that checking parameter and the info about the correct position of numerals.
+and if all the parameters are met by the number than the number is the correct one 
+
+In the function we set the correct_count,correct_position to zero and then we convert the numbers to string and fill it with preceding zeros until the lenth is equal to checking parameter length.
+and then for each number in that string we check if the number is in checking_parameter if so we update the correct_count by +1 and
+check if the number in that position is equal to the number in checking_parameter in same position if so we update the correct_position_count by +1
+now we return true if the number of correct numerals==correct_count and the correct_position_count is eqaul to correct position passed into the function 
+
+}
+
+def check_number(number,checkNum,correct,correct_position):
+  
+  count_correct=0
+  count_correct_position=0
+  str_num=str(number).zfill(len(checkNum))
+  for i in range(len(checkNum)):
+    if str_num[i] in checkNum:
+      count_correct+=1
+    if str_num[i]==checkNum[i]:
+      count_correct_position+=1
+  return correct == count_correct and correct_position == count_correct_position
+
+
+
+
+for check_num in range(1000):
+  if  check_number(check_num,'147',1,0) and check_number(check_num,'189',1,1) and check_number(check_num,'964',2,0) and check_number(check_num,'523',0,0) and check_number(check_num,'286',1,0):
+    print("the number is "+str(check_num).zfill(3))
+
+      
